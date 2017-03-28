@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PollutionCertificateGenerator", "PollutionCertificateGenerator\PollutionCertificateGenerator.csproj", "{95E8806E-D8ED-4A32-89EC-2A06DBC99F37}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setup_pcg", "setup_pcg\setup_pcg.vdproj", "{DBF76156-FFAB-4C2A-8DA0-6AEBA90DF8F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95E8806E-D8ED-4A32-89EC-2A06DBC99F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E8806E-D8ED-4A32-89EC-2A06DBC99F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E8806E-D8ED-4A32-89EC-2A06DBC99F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E8806E-D8ED-4A32-89EC-2A06DBC99F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBF76156-FFAB-4C2A-8DA0-6AEBA90DF8F3}.Debug|Any CPU.ActiveCfg = Debug
+		{DBF76156-FFAB-4C2A-8DA0-6AEBA90DF8F3}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
