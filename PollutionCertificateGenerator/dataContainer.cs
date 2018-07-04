@@ -30,6 +30,7 @@ namespace PollutionCertificateGenerator
         {
             this.name = "MAHAVIR POLLUTION TESTING CENTER";
             this.address = "RTO CAMPUS,\n RANWA BHATTA,\n RAIPUR (C.G.)";
+            this.contactNo = "9826198612";
             this.liscenceNo = "01/2015";
             this.idNo = "14,727";
             this.narration = "Certificate that the vehicle meets emmission"
@@ -323,9 +324,8 @@ namespace PollutionCertificateGenerator
     public class CustomerData
     {
         private String vehNo, category, vehMake, result, co, hc;
-        private String vehModel, fuelType, validUpto, image;
-        private String std_co, std_hc;
-        private DateTime dateOn, time, regYear;
+        private String vehModel, fuelType, validUpto, regYear, image;
+        private DateTime dateOn, time;
 #if true
         public CustomerData()
         {
@@ -337,11 +337,11 @@ namespace PollutionCertificateGenerator
             this.fuelType = "";
             this.time = DateTime.Today;
             this.validUpto = "";
-            this.regYear = DateTime.Today;
+            this.regYear = "";
             this.result = "";
             this.image = "";
-            this.std_co = "";
-            this.std_hc = "";
+            this.co = "";
+            this.hc = "";
         }
 #else
         public CustomerData()
@@ -368,7 +368,7 @@ namespace PollutionCertificateGenerator
                             String fuelType,
                             DateTime time,
                             String validUpto,
-                            DateTime regYear,
+                            String regYear,
                             String result,
                             String image,
                             String co,
@@ -387,7 +387,6 @@ namespace PollutionCertificateGenerator
             this.image = image;
             this.co = co;
             this.hc = hc;
-
         }
         public void AddCustomerData(String vehNo,
                                 String category,
@@ -395,13 +394,11 @@ namespace PollutionCertificateGenerator
                                 String vehModel,
                                 String fuelType,
                                 String validUpto,
-                                DateTime regYear,
+                                String regYear,
                                 String result,
                                 String image,
                                 String co,
-                                String hc,
-                                String std_co,
-                                String std_hc)
+                                String hc)
         {
             this.vehNo = vehNo;
             this.category = category;
@@ -416,8 +413,6 @@ namespace PollutionCertificateGenerator
             this.image = image;
             this.co = co;
             this.hc = hc;
-            this.std_co = std_co;
-            this.std_hc = std_hc;
         }
 
         public String VehNo
@@ -494,7 +489,7 @@ namespace PollutionCertificateGenerator
         {
             get
             {
-                return regYear.ToString("dd/MM/yyyy");
+                return regYear;
             }
         }
         public String CO
@@ -509,20 +504,6 @@ namespace PollutionCertificateGenerator
             get
             {
                 return hc;
-            }
-        }
-        public String STD_CO
-        {
-            get
-            {
-                return std_co;
-            }
-        }
-        public String STD_HC
-        {
-            get
-            {
-                return std_hc;
             }
         }
     }

@@ -25,13 +25,11 @@ namespace PollutionCertificateGenerator
         private Capture _capture1 = null;
         private bool _captureInProgress1;
         int prevType = 0;
-        DateTime compare_date;
         public frmNewCertificate(frmMain mainFrm)
         {
             InitializeComponent();
             this.mainFrm = mainFrm;
             this.companyData = mainFrm.GetCompanyData();
-            compare_date = new DateTime(2000, 3, 31);
             comboBox1.Text = "0";
             try
             {
@@ -133,33 +131,17 @@ namespace PollutionCertificateGenerator
             //DataGridViewRow row;
             Random random = new Random();
             double co, hc;
-            int iStroke, iType;
-            DateTime regYear;
-            iStroke = strokeStrToInt(cmb_veh_stroke.Text);
-            iType = typeStrToInt(cmb_veh_type.Text);
-            regYear = dtp_regYear.Value;
-            double dCo;
-            int iHc;
-            int max_co, max_hc;
-            cal_hc_co(regYear, iStroke, iType, out iHc, out dCo);
-            if (iHc == 0)
-            {
-                iHc = 4500;
-                dCo = 3.5;
-            }
-            max_co = (int)(dCo * 10);
-            max_hc = iHc;
             if (cmb_result.Text.ToLower() == "pass")
             {
-                co = random.Next(max_co-10, max_co);
+                co = random.Next(1, 20);
                 co = co / 10;
-                hc = random.Next(max_hc - 1000, max_hc);
+                hc = random.Next(200, 600);
             }
             else
             {
-                co = random.Next(max_co+1, max_co+10);
+                co = random.Next(25, 30);
                 co = co / 10;
-                hc = random.Next(max_hc+10, max_hc+1000);
+                hc = random.Next(2000, 4000);
             }
             txt_co.Text = co.ToString();
             txt_hc.Text = hc.ToString();
@@ -179,7 +161,7 @@ namespace PollutionCertificateGenerator
             //}
             //txt_kval.Text = String.Format("{0:0.00}", generator.AvgKVAL);
             //txt_hsuper.Text = String.Format("{0:00.00}",  generator.AvgHSUPer);
-            if (co < max_co && hc < max_hc)
+            if (co < 2.5 && hc < 4500)
             {
                 txt_result.Text = "PASS";
 
@@ -202,11 +184,10 @@ namespace PollutionCertificateGenerator
             val = DateTime.Now;
             val = val.AddYears(companyData.GetValYear()).AddMonths(companyData.GetValMonth()).AddDays(-1);
             txt_validUpto.Text = val.ToString("dd/MM/yyyy");
+            txt_regYear.Text = "";
             //grd_dataTable.Rows.Clear();
             txt_fare.Text = "100";
-            cmb_result.SelectedIndex = 0;
-            cmb_veh_stroke.SelectedIndex = 0;
-            cmb_veh_type.SelectedIndex = 0;
+            cmb_result.Text = "PASS";
             GenerateData();
         }
         public String Fare
@@ -242,6 +223,8 @@ namespace PollutionCertificateGenerator
                 return false;
             if (txt_time.Text == "")
                 return false;
+            if (txt_regYear.Text == "")
+                return false;
             //if (grd_dataTable.RowCount == 0)
             //    return false;
             return true;
@@ -254,27 +237,17 @@ namespace PollutionCertificateGenerator
             if (!ret)
                 return ret;
             imagePath = Helper.SaveImageCapture(captureImageBox.Image.Bitmap, txt_vehNo.Text);
-            int iHc;
-            double dCo;
-            cal_hc_co(dtp_regYear.Value, strokeStrToInt(cmb_veh_stroke.Text), typeStrToInt(cmb_veh_type.Text), out iHc, out dCo);
-            if (iHc == 0)
-            {
-                iHc = 4500;
-                dCo = 3.5;
-            }
             data.AddCustomerData(txt_vehNo.Text,
                                 cmb_category.Text,
                                 cmb_vehMake.Text,
                                 cmb_vehModel.Text,
                                 txt_fuelTupe.Text,
                                 txt_validUpto.Text,
-                                dtp_regYear.Value,
+                                txt_regYear.Text,
                                 txt_result.Text,
                                 imagePath,
                                 txt_co.Text,
-                                txt_hc.Text,
-                                dCo.ToString(),
-                                iHc.ToString());
+                                txt_hc.Text);
             //dataTable = generator.GetDataTableList();
 #if XMLDone
             for (int i = 0; i < grd_dataTable.RowCount-1; i++)
@@ -296,7 +269,8 @@ namespace PollutionCertificateGenerator
         {
             if (txt_vehNo.Text.Trim() == "" || 
                 cmb_vehMake.Text.Trim() == "" || 
-                cmb_vehModel.Text.Trim() == "")
+                cmb_vehModel.Text.Trim() == "" || 
+                txt_regYear.Text.Trim() == "")
                 return false;
             /*if (pictureBox1.Image == null)
                 return false;*/
@@ -371,94 +345,7 @@ namespace PollutionCertificateGenerator
             GenerateData();
         }
 
-        private void dtp_regYear_ValueChanged(object sender, EventArgs e)
-        {
-            Update_HC_CO();
-        }
-        private void Update_HC_CO()
-        {
-            int iStroke = strokeStrToInt(cmb_veh_stroke.Text);
-            int iVehType = typeStrToInt(cmb_veh_type.Text);
-            DateTime regYear = dtp_regYear.Value;
-            String sHc = "HC/PPM (MAX {0})";
-            String sCo = "CO% (MAC {0})";
-            int hc;
-            double co;
-
-            cal_hc_co(regYear, iStroke, iVehType, out hc, out co);
-            if (hc == 0)
-                return;
-            lbl_hc.Text = String.Format(sHc, hc);
-            lbl_co.Text = String.Format(sCo, co);
-            GenerateData();
-        }
-        private int strokeStrToInt(String stroke)
-        {
-            int iStroke = 0;
-            switch(stroke)
-            {
-                case "4 Stroke":
-                    iStroke =  4;
-                    break;
-                case "2 Stroke":
-                    iStroke = 2;
-                    break;
-            }
-            return iStroke;
-        }
-        private int typeStrToInt(String stroke)
-        {
-            int vehType = 0;
-            switch(stroke)
-            {
-                case "4 Wheeler":
-                    vehType = 4;
-                    break;
-                case "3 Wheeler":
-                    vehType = 3;
-                    break;
-                case "2 Wheeler":
-                    vehType = 2;
-                    break;
-            }
-            return vehType;
-        }
-        private void cal_hc_co(DateTime regYear, int iStroke, int iVehType, out int std_hc, out double std_co)
-        {
-            int cmp = DateTime.Compare(regYear, compare_date);
-            std_co = 0;
-            std_hc = 0;
-            if (iStroke <= 0)
-                return;
-
-            if (iVehType == 4)
-            {
-                std_hc = 1500;
-                std_co = 3.0;
-            }
-            else if ((iVehType == 2 || iVehType == 3) && cmp <= 0)
-            {
-                std_hc = 9000;
-                std_co = 4.5;
-            }
-            else if ((iVehType == 2 || iVehType == 3) && cmp > 0 && iStroke == 2)
-            {
-                std_hc = 6000;
-                std_co = 3.5;
-            }
-            else if ((iVehType == 2 || iVehType == 3) && cmp > 0 && iStroke == 4)
-            {
-                std_hc = 4500;
-                std_co = 3.5;
-            }
-        }
-
-        private void cmb_veh_stroke_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Update_HC_CO();
-        }
-
-    }   
+    }
     public class Helper
     {
 

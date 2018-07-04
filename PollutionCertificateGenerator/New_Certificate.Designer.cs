@@ -46,18 +46,8 @@
             this.txt_fuelTupe = new System.Windows.Forms.TextBox();
             this.txt_time = new System.Windows.Forms.TextBox();
             this.txt_validUpto = new System.Windows.Forms.TextBox();
+            this.txt_regYear = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cmb_veh_type = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cmb_veh_stroke = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dtp_regYear = new System.Windows.Forms.DateTimePicker();
-            this.txt_result = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_hc = new System.Windows.Forms.TextBox();
-            this.lbl_hc = new System.Windows.Forms.Label();
-            this.txt_co = new System.Windows.Forms.TextBox();
-            this.lbl_co = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.cmb_result = new System.Windows.Forms.ComboBox();
             this.txt_fare = new System.Windows.Forms.TextBox();
@@ -72,6 +62,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txt_co = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_hc = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_result = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.captureImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -132,7 +128,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 216);
+            this.label7.Location = new System.Drawing.Point(20, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 16);
             this.label7.TabIndex = 6;
@@ -142,7 +138,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(57, 245);
+            this.label8.Location = new System.Drawing.Point(57, 185);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 16);
             this.label8.TabIndex = 7;
@@ -175,7 +171,7 @@
             this.txt_vehNo.Location = new System.Drawing.Point(107, 12);
             this.txt_vehNo.Name = "txt_vehNo";
             this.txt_vehNo.Size = new System.Drawing.Size(146, 22);
-            this.txt_vehNo.TabIndex = 0;
+            this.txt_vehNo.TabIndex = 11;
             // 
             // cmb_category
             // 
@@ -184,7 +180,7 @@
             this.cmb_category.Location = new System.Drawing.Point(107, 40);
             this.cmb_category.Name = "cmb_category";
             this.cmb_category.Size = new System.Drawing.Size(146, 24);
-            this.cmb_category.TabIndex = 1;
+            this.cmb_category.TabIndex = 12;
             this.cmb_category.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_category_KeyPress);
             // 
             // txt_dateOn
@@ -195,7 +191,7 @@
             this.txt_dateOn.Location = new System.Drawing.Point(107, 70);
             this.txt_dateOn.Name = "txt_dateOn";
             this.txt_dateOn.Size = new System.Drawing.Size(146, 22);
-            this.txt_dateOn.TabIndex = 2;
+            this.txt_dateOn.TabIndex = 13;
             // 
             // cmb_vehMake
             // 
@@ -204,7 +200,7 @@
             this.cmb_vehMake.Location = new System.Drawing.Point(107, 98);
             this.cmb_vehMake.Name = "cmb_vehMake";
             this.cmb_vehMake.Size = new System.Drawing.Size(146, 24);
-            this.cmb_vehMake.TabIndex = 3;
+            this.cmb_vehMake.TabIndex = 14;
             this.cmb_vehMake.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_category_KeyPress);
             // 
             // cmb_vehModel
@@ -214,7 +210,7 @@
             this.cmb_vehModel.Location = new System.Drawing.Point(107, 128);
             this.cmb_vehModel.Name = "cmb_vehModel";
             this.cmb_vehModel.Size = new System.Drawing.Size(146, 24);
-            this.cmb_vehModel.TabIndex = 4;
+            this.cmb_vehModel.TabIndex = 15;
             this.cmb_vehModel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_category_KeyPress);
             // 
             // txt_fuelTupe
@@ -222,20 +218,20 @@
             this.txt_fuelTupe.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_fuelTupe.Enabled = false;
             this.txt_fuelTupe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_fuelTupe.Location = new System.Drawing.Point(107, 218);
+            this.txt_fuelTupe.Location = new System.Drawing.Point(107, 158);
             this.txt_fuelTupe.Name = "txt_fuelTupe";
             this.txt_fuelTupe.Size = new System.Drawing.Size(146, 22);
-            this.txt_fuelTupe.TabIndex = 7;
+            this.txt_fuelTupe.TabIndex = 16;
             // 
             // txt_time
             // 
             this.txt_time.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_time.Enabled = false;
             this.txt_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_time.Location = new System.Drawing.Point(107, 246);
+            this.txt_time.Location = new System.Drawing.Point(107, 186);
             this.txt_time.Name = "txt_time";
             this.txt_time.Size = new System.Drawing.Size(146, 22);
-            this.txt_time.TabIndex = 8;
+            this.txt_time.TabIndex = 17;
             // 
             // txt_validUpto
             // 
@@ -245,21 +241,25 @@
             this.txt_validUpto.Location = new System.Drawing.Point(415, 14);
             this.txt_validUpto.Name = "txt_validUpto";
             this.txt_validUpto.Size = new System.Drawing.Size(146, 22);
-            this.txt_validUpto.TabIndex = 9;
+            this.txt_validUpto.TabIndex = 18;
+            // 
+            // txt_regYear
+            // 
+            this.txt_regYear.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_regYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_regYear.Location = new System.Drawing.Point(415, 43);
+            this.txt_regYear.Name = "txt_regYear";
+            this.txt_regYear.Size = new System.Drawing.Size(146, 22);
+            this.txt_regYear.TabIndex = 19;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cmb_veh_type);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.cmb_veh_stroke);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.dtp_regYear);
             this.panel2.Controls.Add(this.txt_result);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txt_hc);
-            this.panel2.Controls.Add(this.lbl_hc);
+            this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txt_co);
-            this.panel2.Controls.Add(this.lbl_co);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.cmb_result);
             this.panel2.Controls.Add(this.txt_fare);
@@ -271,6 +271,7 @@
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.txt_regYear);
             this.panel2.Controls.Add(this.txt_validUpto);
             this.panel2.Controls.Add(this.txt_time);
             this.panel2.Controls.Add(this.txt_fuelTupe);
@@ -290,128 +291,8 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(12, 52);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(804, 800);
+            this.panel2.Size = new System.Drawing.Size(804, 767);
             this.panel2.TabIndex = 22;
-            // 
-            // cmb_veh_type
-            // 
-            this.cmb_veh_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_veh_type.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmb_veh_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_veh_type.FormattingEnabled = true;
-            this.cmb_veh_type.Items.AddRange(new object[] {
-            "4 Wheeler",
-            "3 Wheeler",
-            "2 Wheeler"});
-            this.cmb_veh_type.Location = new System.Drawing.Point(107, 188);
-            this.cmb_veh_type.Name = "cmb_veh_type";
-            this.cmb_veh_type.Size = new System.Drawing.Size(146, 24);
-            this.cmb_veh_type.TabIndex = 6;
-            this.cmb_veh_type.SelectedIndexChanged += new System.EventHandler(this.cmb_veh_stroke_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(10, 190);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 16);
-            this.label14.TabIndex = 115;
-            this.label14.Text = "Veh. Type:";
-            // 
-            // cmb_veh_stroke
-            // 
-            this.cmb_veh_stroke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_veh_stroke.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmb_veh_stroke.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_veh_stroke.FormattingEnabled = true;
-            this.cmb_veh_stroke.Items.AddRange(new object[] {
-            "4 Stroke",
-            "2 Stroke"});
-            this.cmb_veh_stroke.Location = new System.Drawing.Point(107, 158);
-            this.cmb_veh_stroke.Name = "cmb_veh_stroke";
-            this.cmb_veh_stroke.Size = new System.Drawing.Size(146, 24);
-            this.cmb_veh_stroke.TabIndex = 5;
-            this.cmb_veh_stroke.SelectedIndexChanged += new System.EventHandler(this.cmb_veh_stroke_SelectedIndexChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(10, 160);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 16);
-            this.label13.TabIndex = 113;
-            this.label13.Text = "Veh. Stroke:";
-            // 
-            // dtp_regYear
-            // 
-            this.dtp_regYear.CustomFormat = "dd/MM/yyyy";
-            this.dtp_regYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_regYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_regYear.Location = new System.Drawing.Point(415, 43);
-            this.dtp_regYear.Name = "dtp_regYear";
-            this.dtp_regYear.Size = new System.Drawing.Size(146, 22);
-            this.dtp_regYear.TabIndex = 10;
-            this.dtp_regYear.ValueChanged += new System.EventHandler(this.dtp_regYear_ValueChanged);
-            // 
-            // txt_result
-            // 
-            this.txt_result.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_result.Location = new System.Drawing.Point(415, 190);
-            this.txt_result.Name = "txt_result";
-            this.txt_result.ReadOnly = true;
-            this.txt_result.Size = new System.Drawing.Size(76, 22);
-            this.txt_result.TabIndex = 18;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(351, 189);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 16);
-            this.label11.TabIndex = 111;
-            this.label11.Text = "Result:";
-            // 
-            // txt_hc
-            // 
-            this.txt_hc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_hc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_hc.Location = new System.Drawing.Point(415, 162);
-            this.txt_hc.Name = "txt_hc";
-            this.txt_hc.Size = new System.Drawing.Size(76, 22);
-            this.txt_hc.TabIndex = 17;
-            // 
-            // lbl_hc
-            // 
-            this.lbl_hc.AutoSize = true;
-            this.lbl_hc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hc.Location = new System.Drawing.Point(256, 162);
-            this.lbl_hc.Name = "lbl_hc";
-            this.lbl_hc.Size = new System.Drawing.Size(151, 16);
-            this.lbl_hc.TabIndex = 109;
-            this.lbl_hc.Text = "HC/PPM (MAX 4500):";
-            // 
-            // txt_co
-            // 
-            this.txt_co.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_co.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_co.Location = new System.Drawing.Point(415, 130);
-            this.txt_co.Name = "txt_co";
-            this.txt_co.Size = new System.Drawing.Size(76, 22);
-            this.txt_co.TabIndex = 16;
-            // 
-            // lbl_co
-            // 
-            this.lbl_co.AutoSize = true;
-            this.lbl_co.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_co.Location = new System.Drawing.Point(292, 132);
-            this.lbl_co.Name = "lbl_co";
-            this.lbl_co.Size = new System.Drawing.Size(115, 16);
-            this.lbl_co.TabIndex = 107;
-            this.lbl_co.Text = "CO% (MAX 3.5):";
             // 
             // label18
             // 
@@ -425,7 +306,6 @@
             // 
             // cmb_result
             // 
-            this.cmb_result.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_result.FormattingEnabled = true;
             this.cmb_result.Items.AddRange(new object[] {
@@ -434,7 +314,7 @@
             this.cmb_result.Location = new System.Drawing.Point(415, 99);
             this.cmb_result.Name = "cmb_result";
             this.cmb_result.Size = new System.Drawing.Size(146, 24);
-            this.cmb_result.TabIndex = 12;
+            this.cmb_result.TabIndex = 21;
             this.cmb_result.SelectedIndexChanged += new System.EventHandler(this.cmb_result_SelectedIndexChanged);
             // 
             // txt_fare
@@ -444,13 +324,13 @@
             this.txt_fare.Location = new System.Drawing.Point(415, 71);
             this.txt_fare.Name = "txt_fare";
             this.txt_fare.Size = new System.Drawing.Size(146, 22);
-            this.txt_fare.TabIndex = 11;
+            this.txt_fare.TabIndex = 20;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(419, 247);
+            this.label17.Location = new System.Drawing.Point(419, 218);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(110, 16);
             this.label17.TabIndex = 103;
@@ -464,7 +344,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.comboBox1.Location = new System.Drawing.Point(532, 244);
+            this.comboBox1.Location = new System.Drawing.Point(532, 215);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(102, 24);
             this.comboBox1.TabIndex = 102;
@@ -472,27 +352,27 @@
             // 
             // captureButton
             // 
-            this.captureButton.Location = new System.Drawing.Point(532, 272);
+            this.captureButton.Location = new System.Drawing.Point(532, 243);
             this.captureButton.Name = "captureButton";
             this.captureButton.Size = new System.Drawing.Size(102, 23);
-            this.captureButton.TabIndex = 13;
+            this.captureButton.TabIndex = 24;
             this.captureButton.Text = "Start Capture";
             this.captureButton.UseVisualStyleBackColor = true;
             this.captureButton.Click += new System.EventHandler(this.captureButtonClick);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(532, 301);
+            this.button3.Location = new System.Drawing.Point(532, 272);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 23);
-            this.button3.TabIndex = 14;
+            this.button3.TabIndex = 31;
             this.button3.Text = "Browse Image";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // captureImageBox
             // 
-            this.captureImageBox.Location = new System.Drawing.Point(19, 272);
+            this.captureImageBox.Location = new System.Drawing.Point(19, 243);
             this.captureImageBox.Name = "captureImageBox";
             this.captureImageBox.Size = new System.Drawing.Size(500, 500);
             this.captureImageBox.TabIndex = 25;
@@ -510,10 +390,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(632, 272);
+            this.button2.Location = new System.Drawing.Point(632, 243);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 23);
-            this.button2.TabIndex = 15;
+            this.button2.TabIndex = 32;
             this.button2.Text = "Regenerate Data";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -551,12 +431,69 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Image Files (*.jpg)|*.jpg";
             // 
+            // txt_co
+            // 
+            this.txt_co.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_co.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_co.Location = new System.Drawing.Point(415, 130);
+            this.txt_co.Name = "txt_co";
+            this.txt_co.Size = new System.Drawing.Size(76, 22);
+            this.txt_co.TabIndex = 108;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(292, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 16);
+            this.label1.TabIndex = 107;
+            this.label1.Text = "CO% (MAX 3.5):";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(256, 162);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(151, 16);
+            this.label12.TabIndex = 109;
+            this.label12.Text = "HC/PPM (MAX 4500):";
+            // 
+            // txt_hc
+            // 
+            this.txt_hc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_hc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_hc.Location = new System.Drawing.Point(415, 162);
+            this.txt_hc.Name = "txt_hc";
+            this.txt_hc.Size = new System.Drawing.Size(76, 22);
+            this.txt_hc.TabIndex = 110;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(351, 189);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 16);
+            this.label11.TabIndex = 111;
+            this.label11.Text = "Result:";
+            // 
+            // txt_result
+            // 
+            this.txt_result.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_result.Location = new System.Drawing.Point(415, 190);
+            this.txt_result.Name = "txt_result";
+            this.txt_result.Size = new System.Drawing.Size(76, 22);
+            this.txt_result.TabIndex = 112;
+            // 
             // frmNewCertificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1242, 618);
+            this.ClientSize = new System.Drawing.Size(1191, 618);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -596,6 +533,7 @@
         private System.Windows.Forms.TextBox txt_fuelTupe;
         private System.Windows.Forms.TextBox txt_time;
         private System.Windows.Forms.TextBox txt_validUpto;
+        private System.Windows.Forms.TextBox txt_regYear;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
@@ -612,15 +550,10 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cmb_result;
         private System.Windows.Forms.TextBox txt_hc;
-        private System.Windows.Forms.Label lbl_hc;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_co;
-        private System.Windows.Forms.Label lbl_co;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_result;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dtp_regYear;
-        private System.Windows.Forms.ComboBox cmb_veh_stroke;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cmb_veh_type;
-        private System.Windows.Forms.Label label14;
     }
 }
