@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace PollutionCertificateGenerator
 {
+    using CustomerDataTableList = DataList<CustomerDataTable>;
+    using CustomerDataTablePetrolList = DataList<CustomerDataTablePetrol>;
     public class dataGenerator
     {
         Random random;
+        private CustomerDataTablePetrolList dataTablePetrolList;
         private CustomerDataTableList dataTableList;
         double avgKval, avgHsuPer;
         struct range
@@ -18,6 +21,11 @@ namespace PollutionCertificateGenerator
         public dataGenerator()
         {
             random = new Random();
+        }
+        public CustomerDataTablePetrolList GetDataTablePetrolList()
+        {
+            //GenerateData();
+            return dataTablePetrolList;
         }
         public CustomerDataTableList GetDataTableList()
         {
@@ -95,6 +103,7 @@ namespace PollutionCertificateGenerator
             range maxRPMRange = new range();
             range hsuRange = new range();
             range tempRange = new range();
+            dataTablePetrolList = new CustomerDataTablePetrolList();
             dataTableList = new CustomerDataTableList();
             if (isFail == false)
             {

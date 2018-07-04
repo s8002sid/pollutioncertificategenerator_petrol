@@ -49,6 +49,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -125,6 +126,7 @@
     <None Include="Properties\DataSources\CompanyData.datasource" />
     <None Include="Properties\DataSources\CustomerData.datasource" />
     <None Include="Properties\DataSources\CustomerDataTable.datasource" />
+    <None Include="Properties\DataSources\CustomerDataTablePetrol.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

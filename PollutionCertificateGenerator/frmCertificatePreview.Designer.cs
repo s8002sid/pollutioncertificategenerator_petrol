@@ -32,13 +32,16 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.CompanyDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CustomerDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CustomerDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CustomerDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CustomerDataTablePetrolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CompanyDataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerDataTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataTablePetrolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -50,9 +53,12 @@
             reportDataSource2.Value = this.CustomerDataTableBindingSource;
             reportDataSource3.Name = "CustomerData";
             reportDataSource3.Value = this.CustomerDataBindingSource;
+            reportDataSource4.Name = "DSCustomerDataTablePetrol";
+            reportDataSource4.Value = this.CustomerDataTablePetrolBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PollutionCertificateGenerator.a4by2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -64,13 +70,18 @@
             // 
             this.CompanyDataBindingSource.DataSource = typeof(PollutionCertificateGenerator.CompanyData);
             // 
+            // CustomerDataTableBindingSource
+            // 
+            this.CustomerDataTableBindingSource.DataSource = typeof(PollutionCertificateGenerator.CustomerDataTable);
+            this.CustomerDataTableBindingSource.CurrentChanged += new System.EventHandler(this.CustomerDataTableBindingSource_CurrentChanged);
+            // 
             // CustomerDataBindingSource
             // 
             this.CustomerDataBindingSource.DataSource = typeof(PollutionCertificateGenerator.CustomerData);
             // 
-            // CustomerDataTableBindingSource
+            // CustomerDataTablePetrolBindingSource
             // 
-            this.CustomerDataTableBindingSource.DataSource = typeof(PollutionCertificateGenerator.CustomerDataTable);
+            this.CustomerDataTablePetrolBindingSource.DataSource = typeof(PollutionCertificateGenerator.CustomerDataTablePetrol);
             // 
             // frmCertificatePreview
             // 
@@ -83,8 +94,9 @@
             this.Load += new System.EventHandler(this.frmCertificatePreview_Load);
             this.Leave += new System.EventHandler(this.frmCertificatePreview_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.CompanyDataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerDataTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataTablePetrolBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,6 +107,7 @@
         private System.Windows.Forms.BindingSource CustomerDataTableBindingSource;
         private System.Windows.Forms.BindingSource CustomerDataBindingSource;
         private System.Windows.Forms.BindingSource CompanyDataBindingSource;
+        private System.Windows.Forms.BindingSource CustomerDataTablePetrolBindingSource;
 
     }
 }

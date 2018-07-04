@@ -6,6 +6,28 @@ using System.Threading.Tasks;
 
 namespace PollutionCertificateGenerator
 {
+    using CompanyDataList = DataList<CompanyData>;
+    using CustomerDataTableList = DataList<CustomerDataTable>;
+    using CustomerDataList = DataList<CustomerData>;
+    using CustomerDataTablePetrolList = DataList<CustomerDataTablePetrol>;
+    public class DataList<T>
+    {
+        private List<T> data;
+        public DataList()
+        {
+            data = new List<T>();
+        }
+
+        public void AddData(T data)
+        {
+            this.data.Add(data);
+        }
+
+        public List<T> GetData()
+        {
+            return data;
+        }
+    }
     public class CompanyData
     {
         private String name, address, contactNo, liscenceNo;
@@ -89,38 +111,14 @@ namespace PollutionCertificateGenerator
             this.valYear = valYear;
             this.valMonth = valMonth;
         }
-        public void AddFare(int testFee)
+        public void AddFare(int testFee) 
         {
             this.testFee = testFee;
         }
-        public String Name
-        {
-            get
-            {
-                return name;
-            }
-        }
-        public String Address
-        {
-            get
-            {
-                return address;
-            }
-        }
-        public String ContactNo
-        {
-            get
-            {
-                return contactNo;
-            }
-        }
-        public String LiscenceNo
-        {
-            get
-            {
-                return liscenceNo;
-            }
-        }
+        public String Name { get { return name; } }
+        public String Address { get { return address; } }
+        public String ContactNo { get { return contactNo; } }
+        public String LiscenceNo { get { return liscenceNo; } }
         public String IDNo
         {
             get
@@ -169,33 +167,6 @@ namespace PollutionCertificateGenerator
         public Int32 GetValMonth()
         {
             return valMonth;
-        }
-    }
-
-    public class CompanyDataList
-    {
-         private List<CompanyData> companyData;
-#if true
-        public CompanyDataList()
-        {
-            companyData = new List<CompanyData>();
-        }
-#else
-         public CompanyDataList()
-         {
-             companyData = new List<CompanyData>();
-             companyData.Add(new CompanyData());
-         }
-#endif
-
-        public void AddData(CompanyData data)
-        {
-            companyData.Add(data);
-        }
-
-        public List<CompanyData> GetCompanyData()
-        {
-            return companyData;
         }
     }
     public class CustomerDataTable
@@ -290,40 +261,9 @@ namespace PollutionCertificateGenerator
         }
     }
 
-    public class CustomerDataTableList
-    {
-        private List<CustomerDataTable> customerDataTable;
-#if true
-        public CustomerDataTableList()
-        {
-            customerDataTable = new List<CustomerDataTable>();
-        }
-#else
-        public CustomerDataTableList()
-        {
-            customerDataTable = new List<CustomerDataTable>();
-            customerDataTable.Add(new CustomerDataTable(1, 917, 4408, 77, 2.53, 66.30));
-            customerDataTable.Add(new CustomerDataTable(2, 901, 4469, 80, 2.50, 65.90));
-            customerDataTable.Add(new CustomerDataTable(3, 901, 4461, 75, 1.97, 57.10));
-            customerDataTable.Add(new CustomerDataTable(4, 911, 4301, 79, 1.91, 56.00));
-            customerDataTable.Add(new CustomerDataTable(5, 886, 4273, 76, 1.97, 57.10));
-            customerDataTable.Add(new CustomerDataTable(6, 931, 4396, 79, 1.89, 55.60));
-        }
-#endif
-
-        public void AddData(CustomerDataTable data)
-        {
-            customerDataTable.Add(data);
-        }
-
-        public List<CustomerDataTable> GetCustomerDataTable()
-        {
-            return customerDataTable;
-        }
-    }
     public class CustomerData
     {
-        private String vehNo, category, vehMake, result, co, hc;
+        private String vehNo, category, vehMake, result;
         private String vehModel, fuelType, validUpto, regYear, image;
         private DateTime dateOn, time;
 #if true
@@ -340,8 +280,6 @@ namespace PollutionCertificateGenerator
             this.regYear = "";
             this.result = "";
             this.image = "";
-            this.co = "";
-            this.hc = "";
         }
 #else
         public CustomerData()
@@ -370,9 +308,7 @@ namespace PollutionCertificateGenerator
                             String validUpto,
                             String regYear,
                             String result,
-                            String image,
-                            String co,
-                            String hc)
+                            String image)
         {
             this.vehNo = vehNo;
             this.category = category;
@@ -385,8 +321,6 @@ namespace PollutionCertificateGenerator
             this.regYear = regYear;
             this.result = result;
             this.image = image;
-            this.co = co;
-            this.hc = hc;
         }
         public void AddCustomerData(String vehNo,
                                 String category,
@@ -396,9 +330,7 @@ namespace PollutionCertificateGenerator
                                 String validUpto,
                                 String regYear,
                                 String result,
-                                String image,
-                                String co,
-                                String hc)
+                                String image)
         {
             this.vehNo = vehNo;
             this.category = category;
@@ -411,8 +343,6 @@ namespace PollutionCertificateGenerator
             this.regYear = regYear;
             this.result = result;
             this.image = image;
-            this.co = co;
-            this.hc = hc;
         }
 
         public String VehNo
@@ -492,6 +422,25 @@ namespace PollutionCertificateGenerator
                 return regYear;
             }
         }
+    }
+    public class CustomerDataTablePetrol
+    {
+        private String co, hc;
+        public CustomerDataTablePetrol()
+        {
+            co = "";
+            hc = "";
+        }
+        public CustomerDataTablePetrol(String co, String hc)
+        {
+            this.co = co;
+            this.hc = hc;
+        }
+        public void AddCustomerDataTablePetrol(String co, String hc)
+        {
+            this.co = co;
+            this.hc = hc;
+        }
         public String CO
         {
             get
@@ -505,32 +454,6 @@ namespace PollutionCertificateGenerator
             {
                 return hc;
             }
-        }
-    }
-    public class CustomerDataList
-    {
-        private List<CustomerData> customerData;
-#if true
-        public CustomerDataList()
-        {
-            customerData = new List<CustomerData>();
-        }
-#else
-        public CustomerDataList()
-        {
-            customerData = new List<CustomerData>();
-            customerData.Add(new CustomerData());
-        }
-#endif
-
-        public void AddData(CustomerData data)
-        {
-            customerData.Add(data);
-        }
-
-        public List<CustomerData> GetCustomerData()
-        {
-            return customerData;
         }
     }
 }

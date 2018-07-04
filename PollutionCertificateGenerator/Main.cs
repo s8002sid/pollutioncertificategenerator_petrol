@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace PollutionCertificateGenerator
 {
+    using CustomerDataTableList = DataList<CustomerDataTable>;
+    using CustomerDataTablePetrolList = DataList<CustomerDataTablePetrol>;
     public partial class frmMain : Form
     {
         /// <summary>
@@ -59,7 +61,7 @@ namespace PollutionCertificateGenerator
             newCertificate.BringToFront();
             toolStrip.Visible = true;
         }
-        private void ShowCertificatePreview(CompanyData company, CustomerData customer, CustomerDataTableList dataTable)
+        private void ShowCertificatePreview(CompanyData company, CustomerData customer, CustomerDataTableList dataTable, CustomerDataTablePetrolList dataTablePetrol)
         {
             if (certificatePreview != null)
             {
@@ -69,7 +71,7 @@ namespace PollutionCertificateGenerator
             certificatePreview = new frmCertificatePreview(this);
             certificatePreview.MdiParent = this;
 
-            certificatePreview.SetDataBindings(company, customer, dataTable);
+            certificatePreview.SetDataBindings(company, customer, dataTable, dataTablePetrol);
 
             certificatePreview.WindowState = FormWindowState.Maximized;
             certificatePreview.Show();
@@ -81,7 +83,7 @@ namespace PollutionCertificateGenerator
         {
             //CustomerDataList dataList = new CustomerDataList();
             CustomerData data = new CustomerData();
-            CustomerDataTableList dataTableList = new CustomerDataTableList();
+            CustomerDataTablePetrolList dataTableList = new CustomerDataTablePetrolList();
             CompanyData company = new CompanyData();
             if (newCertificate == null)
                 if (certificatePreview == null)
@@ -100,7 +102,7 @@ namespace PollutionCertificateGenerator
                 return error_certificate.error_NullValue;
             }
             newCertificate.Visible = false;
-            ShowCertificatePreview(company, data, dataTableList);
+            ShowCertificatePreview(company, data, null, dataTableList);
 
             return error_certificate.error_Success;
         }

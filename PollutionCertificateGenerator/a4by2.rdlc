@@ -1730,7 +1730,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CO.Value</Value>
+                              <Value>=First(Fields!CO.Value, "DSCustomerDataTablePetrol")</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1925,7 +1925,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!HC.Value</Value>
+                              <Value>=First(Fields!HC.Value, "DSCustomerDataTablePetrol")</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2660,6 +2660,27 @@
         <rd:DataSetName>PollutionCertificateGenerator</rd:DataSetName>
         <rd:TableName>CustomerData</rd:TableName>
         <rd:ObjectDataSourceType>PollutionCertificateGenerator.CustomerData, PollutionCertificateGenerator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSCustomerDataTablePetrol">
+      <Query>
+        <DataSourceName>PollutionCertificateGenerator</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CO">
+          <DataField>CO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HC">
+          <DataField>HC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>PollutionCertificateGenerator</rd:DataSetName>
+        <rd:TableName>CustomerDataTablePetrol</rd:TableName>
+        <rd:ObjectDataSourceType>PollutionCertificateGenerator.CustomerDataTablePetrol, PollutionCertificateGenerator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

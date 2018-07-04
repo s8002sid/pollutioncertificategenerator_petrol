@@ -14,6 +14,8 @@ using System.IO;
 
 namespace PollutionCertificateGenerator
 {
+    using CustomerDataTableList = DataList<CustomerDataTable>;
+    using CustomerDataTablePetrolList = DataList<CustomerDataTablePetrol>;
     public partial class frmNewCertificate : Form
     {
         frmMain mainFrm;
@@ -229,7 +231,7 @@ namespace PollutionCertificateGenerator
             //    return false;
             return true;
         }
-        private bool CreateData(ref CustomerData data, ref CustomerDataTableList dataTable)
+        private bool CreateData(ref CustomerData data, ref CustomerDataTablePetrolList dataTable)
         {
             CustomerDataTable tmpTable = new CustomerDataTable();
             String imagePath;
@@ -245,10 +247,11 @@ namespace PollutionCertificateGenerator
                                 txt_validUpto.Text,
                                 txt_regYear.Text,
                                 txt_result.Text,
-                                imagePath,
-                                txt_co.Text,
-                                txt_hc.Text);
-            //dataTable = generator.GetDataTableList();
+                                imagePath);
+            CustomerDataTablePetrol  tempDataTable = new CustomerDataTablePetrol(txt_co.Text, txt_hc.Text);
+            CustomerDataTablePetrolList tempDataTableList = new CustomerDataTablePetrolList();
+            tempDataTableList.AddData(tempDataTable);
+            dataTable = tempDataTableList;
 #if XMLDone
             for (int i = 0; i < grd_dataTable.RowCount-1; i++)
             {
@@ -278,7 +281,7 @@ namespace PollutionCertificateGenerator
             //    return false;
             return true;
         }
-        public bool Print(ref CustomerData data, ref CustomerDataTableList dataTable)
+        public bool Print(ref CustomerData data, ref CustomerDataTablePetrolList dataTable)
         {
             if (!Validate())
                 return false;
